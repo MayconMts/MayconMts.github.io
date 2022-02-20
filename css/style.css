@@ -1,0 +1,194 @@
+:root{
+    --color-1-: #d89f04 ;
+    --color-2-: #f9db89 ;
+    --color-3-: rgb(255, 255, 255) ;
+    --width-a-: 404px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-size: contain;
+    background: linear-gradient(130deg, rgba(0,0,0,1) 50%, rgba(216,159,4,1) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+
+/* PROFILE */
+
+.profile {
+    text-align: center;
+    padding-top: 25px;
+}
+
+.profile .avatarDiv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+.profile .avatarDiv .rotateBg{
+    position: absolute;
+    content: '';
+    margin: 0 auto;
+    background: linear-gradient(90deg, rgba(216,159,4,1) 0%, rgba(255,255,255,1) 50%, rgba(216,159,4,1) 100%);
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: rotate 2s infinite linear;
+}
+
+.profile .avatarDiv .avatar {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.profile h1, h2 {
+    color: var(--color-2-);
+    font-family: 'Comic Neue', cursive;
+    font-weight: 100;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* SECTION */
+
+section{
+    display: flex;
+    justify-content: center;
+}
+
+ul li{
+    width: min(300px, var(--width-a-)) ;
+}
+
+ul li i {
+    color: var(--color-2-);
+}
+
+.links-list {
+    list-style: none;
+    
+}
+
+.links-list li {
+    display: flex;
+    justify-content: center;
+    margin: 10px 20px;
+
+}
+
+.links-list li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: min(300px, var(--width-a-)) ;
+    padding: 30px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--color-2-);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+ /* animação borda */
+
+.links-list li a div{
+    position: absolute;
+    background: var(--color-3-);
+    width: 80px;
+    height: min(300px, 404px);
+    z-index: -2;
+    filter: blur(20px);
+    animation: rotate 4s infinite linear;
+}
+
+.links-list li a::before {
+    content: '';
+    position: absolute;
+    background: var(--color-1-);
+    width: min(300px, var(--width-a-)) ;
+    height: 83px; 
+    z-index: -3;
+    
+}
+
+.links-list li a::after {
+    content: '';
+    position: absolute;
+    background: black;
+    width: min(293px, 397px);
+    height: 75px;
+    z-index: -1;
+    
+}
+
+/* termino animação */
+
+.links-list li a span {
+    font-size: bold;
+    font-family: 'Raleway', sans-serif;
+}
+
+.links-list li a i:first-child {
+    margin-right: 20px;
+    font-size: 35px;
+    position: absolute;
+    left: 20px;
+}
+
+.links-list li a i:last-child {
+    position: absolute;
+    right: 25px;
+    font-size: bold;
+}
+
+footer {
+    background: black;
+    color: var(--color-2-);
+    text-align: center;
+    font-family: 'Comic Neue', cursive;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+
+}
+
+/* animação borda giratória */
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+    
+
