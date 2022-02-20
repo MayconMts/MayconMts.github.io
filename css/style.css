@@ -9,6 +9,7 @@
     --color-4-: black;
     --gradient-1-: linear-gradient(130deg, rgba(0,0,0,1) 50%, rgba(216,159,4,1) 100%) ;
     --gradient-2-: linear-gradient(0deg, rgba(216,159,4,1) 0%, rgba(255,255,255,1) 50%, rgba(216,159,4,1) 100%) ;
+    --gradient-3-: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(216,159,4,1) 50%, rgba(0,0,0,1) 100%) ;
 }
 
 *{
@@ -31,10 +32,37 @@ body{
 
 .profile{
     padding: 30px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+}
+
+.profile .divDivisor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px ;
+    width: 250px;
+    height: 3px;
+    border-radius: 50px;
+    background: var(--gradient-3-);
+    position: relative;
+    bottom: 7px;
+    overflow: hidden;
+}
+
+.profile .divDivisor::after{
+    content: '';
+    width: 80px;
+    height: 1px;
+    border-radius: 50px;
+    background: var(--color-3-);
+    position: absolute;
+    filter: blur( 5px);
+    animation: moving 1s infinite linear;
 }
 
 .profile .avatar{
@@ -98,35 +126,18 @@ body{
 
     position: relative;
 
-    background: var(--color-1-);
+    background: var(--color-4-);
+    border: 3px solid var(--color-2-);
+    box-shadow: 0 0 10px var(--color-2-);
 
     width: 355px;
-    height: 85px;
+    height: 65px;
+    border-radius: 10px;
+
 
     font-size: 1.2em;
 
     margin: 15px 0;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.container .linkList .link::after{
-    content: '';
-    width: 350px;
-    height: 80px;
-    background: var(--color-4-);
-    position: absolute;
-    z-index: -1;
-}
-
-.container .linkList .link::before{
-    content: '';
-    width: 355px;
-    height: 85px;
-    background: var(--gradient-2-);
-    position: absolute;
-    z-index: -2;
-    animation: rotateImg 4s infinite linear;
 }
 
 .container .linkList .link i{
@@ -150,7 +161,7 @@ body{
     color: var(--color-2-);
     position: absolute;
     width: 350px;
-    height: 80px;
+    height: 60px;
 }
 
 
@@ -177,7 +188,7 @@ footer{
 
 
 
-@media (max-height: 700px){
+@media (max-height: 650px){
     footer{
         display: none;
     }

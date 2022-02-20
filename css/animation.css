@@ -10,3 +10,13 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes moving {
+    0%{
+        left: -50%;
+    }
+
+    100%{
+        left: 150%;
+    }
+}
